@@ -1,1 +1,1 @@
-# infa_2022_Yarik_C-
+# infa_2022_Yarik_C++
