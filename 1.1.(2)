@@ -1,0 +1,24 @@
+#include <iostream>
+
+unsigned getReverse(unsigned n) {
+    unsigned r = n % 10;
+    while (n/=10) {
+        r = r * 10 + n % 10;
+    }
+    return r;
+}
+
+bool isPalindrom(const unsigned n) {
+    return n == getReverse(n);
+}
+
+int main() {
+    int n;
+    std::cout << "n: ";
+    std::cin >> n;
+    if (isPalindrom(n)) {
+        std::cout << n << " is palindrom";
+    } else {
+        std::cout << n << " is not palindrom";
+    }
+}
