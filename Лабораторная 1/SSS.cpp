@@ -27,6 +27,7 @@ void move(int n, int *x, int *y, int **arr) {
                     *x = *x + 1;
                 }
             }
+            break;
         case 1:
             if (arr[n - 1][*y] != 1 && *x == 0) {
                 arr[n - 1][*y] = 1;
@@ -39,18 +40,22 @@ void move(int n, int *x, int *y, int **arr) {
                     *x = *x - 1;
                 }
             }
+            break;
         case 2:
             if (arr[*x][*y + 1] != 1) {
                 arr[*x][*y + 1] = 1;
                 arr[*x][*y] = 0;
                 *y = *y + 1;
             }
+            break;
         case 3:
             if (arr[*x][*y - 1] != 1) {
                 arr[*x][*y - 1] = 1;
                 arr[*x][*y] = 0;
                 *y = *y - 1;
             }
+            break;
+
     }
 }
 
@@ -64,9 +69,9 @@ void check(int **pos, int *pos_elem, int **arr, int n) {
             *pos_elem = *pos_elem - 1;
             i--;
         } else {
-            if ((pos[i][0] != 0) && (pos[i][0] != n - 1) &&
+            if (((pos[i][0] != 0) && (pos[i][0] != n - 1) &&
                 ((arr[pos[i][0]][pos[i][1] - 1] == 1 || arr[pos[i][0]][pos[i][1] + 1] == 1 ||
-                  arr[pos[i][0] - 1][pos[i][1]] == 1 || arr[pos[i][0] + 1][pos[i][1]] == 1)) || ((pos[i][0] == 0) &&
+                  arr[pos[i][0] - 1][pos[i][1]] == 1 || arr[pos[i][0] + 1][pos[i][1]] == 1))) || ((pos[i][0] == 0) &&
                                                                                                  (arr[pos[i][0]][
                                                                                                           pos[i][1] -
                                                                                                           1] == 1 ||
