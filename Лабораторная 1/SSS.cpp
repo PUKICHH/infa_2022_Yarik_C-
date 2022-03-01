@@ -143,8 +143,9 @@ int test(int n, int *s) {
         check(pos, &pos_elem, arr, n);
         for (int i = 0; i < pos_elem; i++) {
             move(n, &pos[i][0], &pos[i][1], arr);
+            time++;
         }
-        time++;
+
     } while (pos_elem > 0);
 //write(n, n, arr);
     for (int i = 0; i < n; i++)
